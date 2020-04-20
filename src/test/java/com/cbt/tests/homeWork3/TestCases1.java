@@ -1,4 +1,4 @@
-package com.cbt.tests;
+package com.cbt.tests.homeWork3;
 
 import com.cbt.utilities.BrowserFactory;
 import org.openqa.selenium.By;
@@ -99,15 +99,7 @@ public class TestCases1 {
         Assert.assertTrue(element.isDisplayed());
 
 
-
-
-
     }
-
-
-
-
-
 
     @AfterMethod
     public void teardown(){
