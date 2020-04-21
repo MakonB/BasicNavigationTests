@@ -43,4 +43,28 @@ public class TestCases6_8 {
         driver.quit();
 
     }
+
+
+    @Test
+    public void testCase7() throws InterruptedException {
+
+        driver.get("http://practice-cybertekschool.herokuapp.com");
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//a[text()='File Upload']")).click();
+        String path = "/Users/beibitbaimuratov/Desktop/file.txt";
+        driver.findElement(By.id("file-upload")).sendKeys(path);
+        driver.findElement(By.xpath("//input[@id='file-submit']")).click();
+
+        String expected = "File Uploaded!";
+        String actual = driver.findElement(By.tagName("h3")).getText();
+        Assert.assertEquals(actual,expected);
+        String expected2 = "file.txt";
+        String actual2 = driver.findElement(By.id("uploaded-files")).getText();
+        Assert.assertEquals(actual2,expected2);
+        driver.quit();
+
+
+    }
+
+
 }
