@@ -3,6 +3,7 @@ package com.cbt.tests.homeWork3;
 import com.cbt.utilities.BrowserFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -62,9 +63,22 @@ public class TestCases6_8 {
         String actual2 = driver.findElement(By.id("uploaded-files")).getText();
         Assert.assertEquals(actual2,expected2);
         driver.quit();
-
-
     }
 
+
+    @Test
+    public void testCase8(){
+        driver.get("http://practice-cybertekschool.herokuapp.com");
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//a[text()='Autocomplete']")).click();
+        WebElement input = driver.findElement(By.cssSelector("input[id='myCountry']"));
+        input.sendKeys("United States of America");
+        driver.findElement(By.cssSelector("input[type='button']")).click();
+        String expected = "You selected: United States of America";
+        String actual = driver.findElement(By.cssSelector("p[id='result']")).getText();
+        Assert.assertEquals(actual,expected);
+        driver.quit();
+
+    }
 
 }

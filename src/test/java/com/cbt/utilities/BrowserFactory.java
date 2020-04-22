@@ -23,7 +23,7 @@ public class BrowserFactory {
 
 
         if (browserName.equals("chrome")) {
-            WebDriverManager.chromedriver().version("80").setup();
+            WebDriverManager.chromedriver().version("81").setup();
             return new ChromeDriver();
         } else if (browserName.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
